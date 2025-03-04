@@ -4,8 +4,11 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Vite App</title>
     <link rel="stylesheet" href="./src/style.css">
+    <link rel="stylesheet" href="./src/css/flexbox.css">
+    <link rel="stylesheet" href="./src/css/cssGrid.css">
   </head>
   <body>
     <header class="header">
@@ -24,11 +27,51 @@
     <main class="main-content">
       <!-- Artículo destacado -->
       <article class="post">
+
+        <section>
+          <h2>FLEXBOX</h2>
+          <div class="container-flex">
+            <div class="cardFlexbox">card 1</div>
+            <div class="cardFlexbox">card 2</div>
+            <div class="cardFlexbox">card 3</div>
+            <div class="cardFlexbox">card 4</div>
+            <div class="cardFlexbox">card 5</div>
+            <div class="cardFlexbox">card 6</div>
+            <div class="cardFlexbox">card 7</div>
+            <div class="cardFlexbox">card 8</div>
+            <div class="cardFlexbox">card 9</div>
+            <div class="cardFlexbox">card 10</div>
+            <div class="cardFlexbox">card 11</div>
+            <div class="cardFlexbox">card 12</div>
+            <div class="cardFlexbox">card 13</div>
+          </div>
+        </section>
+
+        <section>
+          <h2>CSS GRID</h2>
+          <div class="container-grid">
+            <div class="cardGrid">card 1</div>
+            <div class="cardGrid">card 2</div>
+            <div class="cardGrid">card 3</div>
+            <div class="cardGrid">card 4</div>
+            <div class="cardGrid">card 5</div>
+            <div class="cardGrid">card 6</div>
+            <div class="cardGrid">card 7</div>
+            <div class="cardGrid">card 8</div>
+            <div class="cardGrid">card 9</div>
+            <div class="cardGrid">card 10</div>
+            <div class="cardGrid">card 11</div>
+            <div class="cardGrid">card 12</div>
+            <div class="cardGrid">card 13</div>
+          </div>
+        </section>
+
         <section class="post-section">
           <h3>Pasto: La Ciudad gastronomica</h3>
           <img src="" alt="Vista panorámica de Pasto de noche" width="600">
           <p>Pasto combina tradición y modernidad...</p>
         </section>
+
         
         <section class="post-section">
           <h3>Consejos Prácticos</h3>
@@ -53,8 +96,15 @@
           <div id="resultado"></div>
           
           <dialog id="miDialogo">
-            <h2>¿Confirmar acción?</h2>
-            <p>¿Estás seguro de eliminar este elemento?</p>
+            <!-- <h2>¿Confirmar acción?</h2>
+            <p>¿Estás seguro de eliminar este elemento?</p> -->
+            <template id="card-template">
+              <div class="card">
+                <h2 class="title"></h2>
+                <p class="content"></p>
+              </div>
+            </template>
+            <div id="clone-block2"></div>
             <button onclick="document.getElementById('miDialogo').close()">Cancelar</button>
             <button onclick="eliminarElemento()">Aceptar</button>
           </dialog>
@@ -77,7 +127,7 @@
 
         <section>
           <picture>
-            <source media="(min-width: 1200px)" srcset="imagen-grande.jpg">
+            <source media="(min-width: 1200px)" srcset="./src/images/nombreimage.webps">
             <source media="(min-width: 768px)" srcset="imagen-mediana.jpg">
             <img src="imagen-pequeña.jpg" alt="Descripción">
           </picture>
@@ -101,7 +151,9 @@
           <datalist id="lenguajes">
             <option value="JavaScript">
             <option value="Python">
-            <option value="Java">
+            <option value=".net">
+            <option value="node">
+            <option value="JavaScript">
           </datalist>
         </section>
 
@@ -148,8 +200,7 @@
             ctx.fillRect(10, 10, 150, 100); // Dibuja un rectángulo
           </script>
         </section>
-          
-          
+   
       </article>
 
       <!-- Barra lateral (contenido relacionado) -->
@@ -182,13 +233,23 @@
             </form>
           </search>
 
+          <div class="div-content">
+            <div><p>1</p></div>
+          <div><p>1</p></div>
+          <div><p>1</p></div>
+          <div><p>1</p></div>
+          <div><p>1</p></div>
+          </div>
+          
+
       </aside>
     </main>
 
     <footer class="footer">
-      <p>© 2025 Guia de comida callejera. Todos los derechos reservados.</p>
-      <address>Contacto: <a href="mailto:info@food.com">info@food.com</a></address>
-      
+      <div>
+        <p>© 2025 Guia de comida callejera. Todos los derechos reservados.</p>
+        <address>Contacto: <a href="mailto:info@food.com">info@food.com</a></address>
+      </div>
     </footer>
 
     <script src="./src/main.js" defer></script>
